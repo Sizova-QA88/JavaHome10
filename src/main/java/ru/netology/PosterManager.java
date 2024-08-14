@@ -1,6 +1,4 @@
-package ru.netology.domain;
-
-import ru.netology.Movie;
+package ru.netology;
 
 public class PosterManager {
     private Movie[] posters = new Movie[0];
@@ -18,18 +16,16 @@ public class PosterManager {
         Movie[] tmp = new Movie[posters.length + 1];
         for (int i = 0; i < posters.length; i++) {
             tmp[i] = posters[i];
-         }
+        }
         tmp[posters.length] = movies;
         posters = tmp;
     }
+
     public Movie[] getMovie() {
         return posters;
     }
 
     public Movie[] findAll() {
-        for( Movie movie : getMovie() ) {
-            System.out.println(movie.getName());
-        }
         return getMovie();
     }
 
@@ -38,7 +34,7 @@ public class PosterManager {
         Movie[] result = new Movie[lastMovies];
 
         for (int i = 0; i < lastMovies; i++) {
-            result[i] = posters[posters.length -1 - i];
+            result[i] = posters[posters.length - 1 - i];
         }
         return result;
     }

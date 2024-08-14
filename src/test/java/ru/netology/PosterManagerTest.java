@@ -2,7 +2,6 @@ package ru.netology;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ru.netology.domain.PosterManager;
 
 public class PosterManagerTest {
     Movie poster1 = new Movie("Бладшот", 12.08, "жанр: боевик");
@@ -12,7 +11,6 @@ public class PosterManagerTest {
     Movie poster5 = new Movie("Человек-невидимка", 26.07, "жанр: ужасы");
     Movie poster6 = new Movie("Тролли. Мировой тур", 19.06, "жанр: мультфильм");
     Movie poster7 = new Movie("Номер один", 07.08, "жанр: комедия");
-
 
 
     @Test
@@ -99,5 +97,7 @@ public class PosterManagerTest {
 
         Movie[] expected = {poster7, poster6, poster5, poster4, poster3};
         Movie[] actual = poster.findLast();
+
+        Assertions.assertArrayEquals(expected, actual);
     }
 }
